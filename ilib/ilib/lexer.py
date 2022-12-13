@@ -45,14 +45,6 @@ class Lexer:
                 ch = self.current_char
                 self.forward()
                 return Token(TokenType.DIV, ch)
-            if self.current_char == "(":
-                ch = self.current_char
-                self.forward()
-                return Token(TokenType.LPAREN, ch)
-            if self.current_char == ")":
-                ch = self.current_char
-                self.forward()
-                return Token(TokenType.RPAREN, ch)
             raise LexerException("bad token")
         return Token(TokenType.EOL, "")
 
